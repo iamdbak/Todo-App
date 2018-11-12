@@ -16,6 +16,7 @@
 		3029D46921880728003B5AD1 /* todoappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029D46821880728003B5AD1 /* todoappTests.swift */; };
 		309611E3218D43FB0097C259 /* CompletedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309611E2218D43FB0097C259 /* CompletedTableViewController.swift */; };
 		30AADC602199111600CD162E /* DoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADC5F2199111600CD162E /* DoneCell.swift */; };
+		30AADC6221994D7A00CD162E /* FetchCompletedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADC6121994D7A00CD162E /* FetchCompletedData.swift */; };
 		30DB3EB62189700700CD5A53 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB3EB52189700700CD5A53 /* AddTaskViewController.swift */; };
 		30DB3EB82189754600CD5A53 /* TodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB3EB72189754600CD5A53 /* TodoListCell.swift */; };
 		30DB3EBA2189791500CD5A53 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DB3EB92189791500CD5A53 /* EditTaskViewController.swift */; };
@@ -45,6 +46,7 @@
 		3029D46A21880728003B5AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		309611E2218D43FB0097C259 /* CompletedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTableViewController.swift; sourceTree = "<group>"; };
 		30AADC5F2199111600CD162E /* DoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCell.swift; sourceTree = "<group>"; };
+		30AADC6121994D7A00CD162E /* FetchCompletedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCompletedData.swift; sourceTree = "<group>"; };
 		30DB3EB52189700700CD5A53 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		30DB3EB72189754600CD5A53 /* TodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCell.swift; sourceTree = "<group>"; };
 		30DB3EB92189791500CD5A53 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				30DB3EB72189754600CD5A53 /* TodoListCell.swift */,
 				30DB3EB92189791500CD5A53 /* EditTaskViewController.swift */,
 				30AADC5F2199111600CD162E /* DoneCell.swift */,
+				30AADC6121994D7A00CD162E /* FetchCompletedData.swift */,
 			);
 			path = todoapp;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3029D45321880725003B5AD1 /* ViewController.swift in Sources */,
+				30AADC6221994D7A00CD162E /* FetchCompletedData.swift in Sources */,
 				30DB3EBA2189791500CD5A53 /* EditTaskViewController.swift in Sources */,
 				309611E3218D43FB0097C259 /* CompletedTableViewController.swift in Sources */,
 				30DB3EB82189754600CD5A53 /* TodoListCell.swift in Sources */,

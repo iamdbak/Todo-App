@@ -15,66 +15,30 @@ class CompletedTableViewController: UIViewController,UITableViewDataSource,UITab
     
     @IBOutlet weak var tableView: UITableView!
    
-    var completed: [String] = []
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return completed.count;
+        return FetchCompletedData.completed.count;
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "doneCell", for: indexPath) as! DoneCell
         
-        cell.completedLabel.text = completed[indexPath.row]
+        cell.completedLabel.text = FetchCompletedData.completed[indexPath.row]
         
         return cell
     }
     
 
-    func loadData() {
-        
-        guard let appDelegate =
-            
-            UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
-        
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName: "Completed")
-        
-        do {
-            let  taskManagedObj = try managedContext.fetch(fetchRequest)
-            setCompletedTask(taskManagedObj)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
-        
-    }
-    
-    func setCompletedTask(_ managedObj: [NSManagedObject]) {
-        
-        
-        for task in managedObj {
-            
-            let taskTitle = task.value(forKeyPath: "title") as! String
-            self.completed.append(taskTitle)
-            
-        }
-    }
+   
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.loadData()
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        self.tableView.rowHeight = 100
-        self.tableView.reloadData()
+        
         
 
        
@@ -88,7 +52,15 @@ class CompletedTableViewController: UIViewController,UITableViewDataSource,UITab
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.rowHeight = 100
+        self.tableView.reloadData()
+
+    }
     
 
 }

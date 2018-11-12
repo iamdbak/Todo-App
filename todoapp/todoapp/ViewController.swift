@@ -51,6 +51,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.deleteCompletedTasks()
         self.loadData()
         self.tableView.reloadData()
         tableView.rowHeight = 100;
@@ -127,6 +128,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         var task = titleName
         
+        FetchCompletedData.completed.append(cell.taskTitle.text!)
+
+        
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
                 return
@@ -199,6 +203,42 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    
+    func deleteCompletedTasks() {
+        
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Completed")
+        
+        do {
+            let  taskManagedObj = try managedContext.fetch(fetchRequest)
+            
+            for obj in taskManagedObj {
+                
+                
+                managedContext.delete(obj)
+            }
+            
+            do {
+                try managedContext.save()
+                
+            }
+                
+            catch {
+                print (error)
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+    }
     
     
     
